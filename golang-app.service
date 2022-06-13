@@ -1,0 +1,15 @@
+[Unit]
+Description=fibonacci service
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/srv/fibonacci
+ExecStart=/srv/fibonacci/fibonacci_runner.sh
+Restart=on-failure
+RestartSec=10
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target  
